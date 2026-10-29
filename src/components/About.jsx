@@ -35,7 +35,7 @@ export default function About() {
               <div className="relative w-full h-full rounded-full bg-[#101010] p-1 overflow-hidden flex items-center justify-center border-2 border-black">
                 {/* Profile Photo */}
                 <img
-                  src={getAssetUrl("jd-profile.jpg")}
+                  src={getAssetUrl("profile-picture.jpg")}
                   alt="John Dave M. Justo"
                   className="w-full h-full rounded-full object-cover"
                 />

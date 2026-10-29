@@ -10,7 +10,7 @@ try {
   console.log('Committing changes to main branch...');
   cp.execSync(`"${gitPath}" add .`);
   try {
-    cp.execSync(`"${gitPath}" commit -m "fix: resolve relative video asset URLs and enhance cinema modal playback"`);
+    cp.execSync(`"${gitPath}" commit -m "feat: update profile picture to new photo"`);
   } catch (e) {
     console.log('No new commit needed or already committed');
   }
@@ -27,14 +27,14 @@ try {
     fs.rmSync(distGit, { recursive: true, force: true });
   }
 
-  console.log('Deploying dist to gh-pages...');
+  console.log('Deploying updated dist to gh-pages...');
   cp.execSync(`"${gitPath}" init -b gh-pages`, { cwd: distDir });
   cp.execSync(`"${gitPath}" config user.name "John Dave M. Justo"`, { cwd: distDir });
   cp.execSync(`"${gitPath}" config user.email "jdjusto.creatives@gmail.com"`, { cwd: distDir });
   cp.execSync(`"${gitPath}" add .`, { cwd: distDir });
-  cp.execSync(`"${gitPath}" commit -m "deploy: fix cinema view and video asset paths on live site"`, { cwd: distDir });
+  cp.execSync(`"${gitPath}" commit -m "deploy: update profile picture on live site"`, { cwd: distDir });
   cp.execSync(`"${gitPath}" push "${authedUrl}" gh-pages:gh-pages --force`, { cwd: distDir });
-  console.log('Successfully deployed to gh-pages!');
+  console.log('Successfully deployed updated profile picture to gh-pages!');
 } catch (err) {
   console.error('Error during deploy:', err.message);
 } finally {
