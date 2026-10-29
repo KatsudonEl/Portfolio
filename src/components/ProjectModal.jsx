@@ -24,13 +24,22 @@ export default function ProjectModal({ project, isOpen, onClose, onPrev, onNext,
     };
   }, [isOpen, onClose, onPrev, onNext]);
 
-  // Restart video playback when switching projects
+  // Restart and play video smoothly when modal opens or project changes
   useEffect(() => {
-    if (videoRef.current && project) {
+    if (isOpen && videoRef.current && project) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If unmuted autoplay blocked by browser policy, mute and play automatically
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch(() => {});
+          }
+        });
+      }
     }
-  }, [project]);
+  }, [project, isOpen]);
 
   if (!project) return null;
 
@@ -100,10 +109,12 @@ export default function ProjectModal({ project, isOpen, onClose, onPrev, onNext,
                 >
                   <video
                     ref={videoRef}
+                    key={project.id}
                     src={project.videoUrl}
                     controls
                     autoPlay
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-contain bg-black"
                   />
                 </div>

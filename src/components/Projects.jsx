@@ -261,7 +261,10 @@ function ProjectCard({ project, onOpen }) {
           </div>
 
           <button
-            onClick={onOpen}
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen();
+            }}
             className="px-3 py-1.5 rounded-full bg-black/70 hover:bg-amber-500 hover:text-black border border-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer backdrop-blur-md"
           >
             <span>Cinema View</span>

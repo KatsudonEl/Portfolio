@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
-import { PORTFOLIO_CONFIG } from "../data/portfolioData";
+import { PORTFOLIO_CONFIG, getAssetUrl } from "../data/portfolioData";
 
 export default function Hero() {
   const headlineWords = "Turning Ideas Into Scroll-Stopping AI Videos & Visuals.".split(" ");
@@ -10,7 +10,7 @@ export default function Hero() {
     {
       badge: "🏎️ Automotive Ad",
       title: "BMW GT3 EVO_ADS.mp4",
-      videoUrl: "/videos/BMW%20GT3%20EVO_ADS.mp4",
+      videoUrl: getAssetUrl("videos/BMW%20GT3%20EVO_ADS.mp4"),
       gradient: "from-blue-950/80 via-neutral-900 to-black",
       delay: 0,
       yOffset: [-4, 6, -4],
@@ -19,7 +19,7 @@ export default function Hero() {
     {
       badge: "⚡ Fitness UGC",
       title: "GymShark_FitnessAds.mp4",
-      videoUrl: "/videos/GymShark_FitnessAds.mp4",
+      videoUrl: getAssetUrl("videos/GymShark_FitnessAds.mp4"),
       gradient: "from-zinc-900/80 via-neutral-900 to-black",
       delay: 0.5,
       yOffset: [6, -6, 6],
@@ -28,7 +28,7 @@ export default function Hero() {
     {
       badge: "💻 SaaS Demo",
       title: "Saas_PromoVideo.mp4",
-      videoUrl: "/videos/Saas_PromoVideo.mp4",
+      videoUrl: getAssetUrl("videos/Saas_PromoVideo.mp4"),
       gradient: "from-indigo-950/80 via-neutral-900 to-black",
       delay: 1,
       yOffset: [-6, 4, -6],
@@ -37,7 +37,7 @@ export default function Hero() {
     {
       badge: "✨ Skincare Ad",
       title: "Skincare_ComercialAds.mp4",
-      videoUrl: "/videos/Skincare_ComercialAds.mp4",
+      videoUrl: getAssetUrl("videos/Skincare_ComercialAds.mp4"),
       gradient: "from-emerald-950/80 via-neutral-900 to-black",
       delay: 1.5,
       yOffset: [5, -5, 5],

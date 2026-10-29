@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Briefcase, Award, MapPin, Sparkles } from "lucide-react";
-import { PORTFOLIO_CONFIG } from "../data/portfolioData";
+import { PORTFOLIO_CONFIG, getAssetUrl } from "../data/portfolioData";
 
 export default function About() {
   const stats = [
@@ -35,7 +35,7 @@ export default function About() {
               <div className="relative w-full h-full rounded-full bg-[#101010] p-1 overflow-hidden flex items-center justify-center border-2 border-black">
                 {/* Profile Photo */}
                 <img
-                  src="/jd-profile.jpg"
+                  src={getAssetUrl("jd-profile.jpg")}
                   alt="John Dave M. Justo"
                   className="w-full h-full rounded-full object-cover"
                 />

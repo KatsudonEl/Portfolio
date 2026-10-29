@@ -1,3 +1,11 @@
+export const getAssetUrl = (path) => {
+  if (!path) return "";
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  const clean = path.replace(/^\.?\//, "");
+  const base = import.meta.env.BASE_URL || "./";
+  return `${base}${clean}`;
+};
+
 export const PORTFOLIO_CONFIG = {
   creatorName: "John Dave M. Justo",
   alias: "JD",
@@ -108,7 +116,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "5.34 MB",
       aspectRatio: "aspect-[9/16]",
       orientation: "vertical",
-      videoUrl: "/videos/BMW%20GT3%20EVO_ADS.mp4",
+      videoUrl: getAssetUrl("videos/BMW%20GT3%20EVO_ADS.mp4"),
       description: "High-octane commercial ad featuring the BMW M4 GT3 EVO. Dynamic camera sweeps, track surface reflections, aggressive exhaust sound staging, and aerodynamic motorsport pacing engineered for maximum thumbstop rate on Instagram Reels & TikTok.",
       hook: "Instant ignition exhaust roar paired with a macro aerodynamic carbon fiber sweep within the first 2.5 seconds.",
       clientIndustry: "Automotive & Luxury Motorsport",
@@ -129,7 +137,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "4.62 MB",
       aspectRatio: "aspect-[9/16]",
       orientation: "vertical",
-      videoUrl: "/videos/GymShark_FitnessAds.mp4",
+      videoUrl: getAssetUrl("videos/GymShark_FitnessAds.mp4"),
       description: "Adrenaline-fueled gym performance ad designed for Gymshark activewear. Features explosive lift repetitions, sweat droplet macro-optics, synchronized bass impact drops, and motivational kinetic typography to maximize direct-to-cart conversions.",
       hook: "Heavy barbell deadlift drop synced to sub-bass impact with aggressive motivational pacing.",
       clientIndustry: "Fitness Apparel & Activewear",
@@ -150,7 +158,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "3.66 MB",
       aspectRatio: "aspect-video",
       orientation: "landscape",
-      videoUrl: "/videos/Saas_PromoVideo.mp4",
+      videoUrl: getAssetUrl("videos/Saas_PromoVideo.mp4"),
       description: "Modern SaaS software promotional showcase highlighting seamless real-time dashboards, collaborative team boards, automated analytics telemetry, and sleek dark-mode UI interactions designed for B2B buyer retention.",
       hook: "Split-screen problem-to-solution visual resolving manual spreadsheet chaos into one-click AI automation.",
       clientIndustry: "B2B Software & Cloud Productivity",
@@ -171,7 +179,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "2.92 MB",
       aspectRatio: "aspect-[9/16]",
       orientation: "vertical",
-      videoUrl: "/videos/Skincare_ComercialAds.mp4",
+      videoUrl: getAssetUrl("videos/Skincare_ComercialAds.mp4"),
       description: "Studio-grade commercial ad highlighting hydration texture, botanical emulsion droplets, soft studio rim lighting, and luminous skin finish. Formatted for high thumbstop rate on Meta Ads & TikTok.",
       hook: "Slow-motion dewdrop suspension reflecting organic plant extracts with gentle ASMR water acoustics.",
       clientIndustry: "Beauty & Botanical Skincare",
@@ -192,7 +200,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "16.15 MB",
       aspectRatio: "aspect-[9/16]",
       orientation: "vertical",
-      videoUrl: "/videos/Skincare_UGC_BrandDeals.mp4",
+      videoUrl: getAssetUrl("videos/Skincare_UGC_BrandDeals.mp4"),
       description: "Ultra-authentic creator UGC brand sponsorship ad. Replicates organic creator habits with dynamic captions, unboxing, authentic micro-pauses, barrier repair before/after proof, and direct discount code CTA.",
       hook: "'Stop buying expensive moisturizers until you know this secret barrier-repair routine that dermatologists love.'",
       clientIndustry: "E-Commerce Beauty & Influencer Deals",
@@ -213,7 +221,7 @@ export const PORTFOLIO_CONFIG = {
       fileSize: "3.21 MB",
       aspectRatio: "aspect-[9/16]",
       orientation: "vertical",
-      videoUrl: "/videos/Sunglasses_PormotionalAds.mp4",
+      videoUrl: getAssetUrl("videos/Sunglasses_PormotionalAds.mp4"),
       description: "Stylized lifestyle promotional ad for premium designer sunglasses. Featuring golden-hour lens reflections, sleek frame silhouettes, high-fashion color grading, and trend-aligned audio pacing for luxury shoppers.",
       hook: "Flash-tilt golden hour lens glare transition with upbeat rhythm-locked beat switch.",
       clientIndustry: "Fashion Accessories & Eyewear",
